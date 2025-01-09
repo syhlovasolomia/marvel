@@ -64,7 +64,7 @@ const CharList = (props) => {
                         props.onCharSelected(item.id);
                         focusOnItem(i);
                     }}
-                    onKeyPress={(e) => {
+                    onKeyDown={(e) => {
                         if (e.key === ' ' || e.key === "Enter") {
                             props.onCharSelected(item.id);
                             focusOnItem(i);
@@ -85,7 +85,7 @@ const CharList = (props) => {
     const items = renderItems(charList);
 
     const errorMessage = error ? <ErrorMessage /> : null;
-    const spinner = loading &&!newItemLoading ? <Spinner /> : null;
+    const spinner = loading && !newItemLoading ? <Spinner /> : null;
 
     return (
         <div className="char__list">
